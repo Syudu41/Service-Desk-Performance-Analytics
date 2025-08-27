@@ -12,7 +12,8 @@ import seaborn as sns
 print("🎯 NYC 311 Service Request Analytics - Data Fetch")
 print("="*50)
 
-total_records = 50000
+total_records = 100000
+
 # Your API endpoint (let's start with 5000 records for testing)
 api_url = f"""https://data.cityofnewyork.us/resource/erm2-nwe9.json?$query=SELECT
   `unique_key`,
