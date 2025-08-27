@@ -1,0 +1,21 @@
+# Ignore the big NYC 311 dataset
+Gov-NYC-311_ServiceDesk.csv
+ 
+# If you want to ignore all CSVs (optional)
+Gov-NYC-311_ServiceDesk*.csv
+
+
+# Usual Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+
+# VS Code settings
+.vscode/
