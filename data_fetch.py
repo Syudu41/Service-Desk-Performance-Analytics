@@ -12,8 +12,9 @@ import seaborn as sns
 print("🎯 NYC 311 Service Request Analytics - Data Fetch")
 print("="*50)
 
+total_records = 20000
 # Your API endpoint (let's start with 5000 records for testing)
-api_url = """https://data.cityofnewyork.us/resource/erm2-nwe9.json?$query=SELECT
+api_url = f"""https://data.cityofnewyork.us/resource/erm2-nwe9.json?$query=SELECT
   `unique_key`,
   `created_date`,
   `closed_date`,
@@ -29,14 +30,14 @@ WHERE
     BETWEEN "2024-01-01T00:00:00" :: floating_timestamp
     AND "2025-08-27T16:44:11" :: floating_timestamp
 ORDER BY `created_date` DESC NULL FIRST
-LIMIT 5000"""
+LIMIT {total_records}"""
 
 # Clean up the URL (remove line breaks and spaces)
 clean_url = api_url.replace('\n', '%0A').replace(' ', '%20')
 
 print(f"📡 Fetching data from NYC Open Data API...")
 print(f"📊 Date Range: Jan 1, 2024 - Aug 27, 2025")
-print(f"🔢 Sample Size: 5,000 records")
+print(f"🔢 Sample Size: {total_records} records")
 print()
 
 try:
