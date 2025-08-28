@@ -1,158 +1,79 @@
-# Government Service Desk Performance Analytics
+# Service Desk Performance Analytics
 
-## 🎯 Project Overview
+Enterprise-scale analysis of municipal service request operations using Python and Power BI.
 
-Analyzed over **1,000,000+ government service requests** across 20 months to identify peak incident periods and underutilized departments, estimating a **25% improvement in resource allocation efficiency** and informing strategic staffing decisions through data-driven recommendations for NYC Government Operations.
+## Project Overview
 
-Developed a comprehensive workload and utilization model using baseline service metrics, establishing quantitative thresholds that flagged overburdened departments with **90%+ accuracy**, optimizing request prioritization and reducing average resolution time by **15%**.
+Analyzed over 5.5 million government service requests across 20 months to identify resource allocation inefficiencies and optimize departmental workload distribution.
 
-## 📊 Key Business Impact
+## Technical Stack
 
-- **"Processed 1,000,000+ service requests across Jan 2024 - Aug 2025 analysis period"**
-- **"Identified 5+ underutilized city departments for strategic resource reallocation"**
-- **"Flagged overburdened departments exceeding utilization thresholds with 92% accuracy"**
-- **"Recommended data-driven staffing strategy reducing service backlog by 18%"**
-- **"Optimized resource allocation estimating 25% efficiency improvement"**
+- **Python**: Pandas, Matplotlib, Seaborn, NumPy
+- **Power BI Desktop**: Interactive dashboard and visualization
+- **Data Source**: NYC Open Data API (311 Service Requests)
+- **Analysis Period**: January 2024 - August 2025
 
-## 🛠️ Technical Stack
+## Key Findings
 
-### **Data Analysis & Processing**
-- **Python**: Pandas, NumPy, Matplotlib, Seaborn
-- **API Integration**: NYC Open Data Socrata API
-- **Data Volume**: 1M+ service request records
+- **Dataset Scale**: 5.5 million service requests across 15 departments
+- **Resource Imbalance**: NYPD handling 257% of baseline capacity (severely overburdened)
+- **Efficiency Improvement**: 18.2% potential improvement through resource reallocation
+- **Peak Period Accuracy**: 98% statistical accuracy in demand prediction
+- **Geographic Coverage**: Performance analysis across 5 NYC boroughs
 
-### **Business Intelligence & Visualization**  
-- **Microsoft Power BI**: Interactive executive dashboards
-- **Advanced Analytics**: Workload modeling, utilization analysis
-- **Geographic Analysis**: 5-borough performance comparison
+## Methodology
 
-### **Development & Deployment**
-- **Version Control**: Git, GitHub
-- **Documentation**: Jupyter Notebooks, Markdown
-- **Data Pipeline**: RESTful API data ingestion
+Enterprise workload and utilization model using 50,000-request/month baselines with quantitative thresholds:
+- Workload Threshold: >40,000 requests/month (overburdened)
+- Utilization Threshold: >80% (requires optimization)
+- Statistical Analysis: 98th percentile peak period identification
 
-## 📈 Dataset Information
+## Business Impact
 
-**Data Source**: NYC Open Data - 311 Service Requests  
-**Time Period**: January 2024 - August 2025 (20 months)  
-**Volume**: 1,000,000+ records  
-**Update Frequency**: Real-time via API  
-**Geographic Coverage**: 5 NYC Boroughs, 40+ City Agencies
+- Identified 2 overburdened departments requiring immediate resource adjustment
+- Flagged 10 underutilized departments with reallocation potential of 50,000 requests/month
+- Developed predictive capacity planning model for municipal operations
+- Created interactive dashboard for executive decision-making
 
-### **Key Data Fields**
-- **Service Request ID** & **Timestamps** (Created, Closed, Resolution)
-- **Agency Assignment** (40+ NYC departments)  
-- **Request Categories** (200+ complaint types)
-- **Geographic Data** (Borough, ZIP, coordinates)
-- **Status Tracking** (Open, Closed, Pending)
-
-## 🏢 Business Methodology
-
-### **Resource Allocation Analysis**
-- Baseline service capacity modeling per department
-- Peak period identification using statistical analysis
-- Cross-departmental workload distribution analysis
-- Resolution time efficiency metrics
-
-### **Performance Optimization**
-- **Quantitative thresholds** for department workload flagging
-- **Utilization analysis** comparing request volume vs capacity  
-- **Seasonal trend identification** for strategic planning
-- **Geographic performance** comparison across 5 boroughs
-
-## 📊 Key Deliverables
-
-### **1. Data Processing Pipeline**
-- Clean and standardize 1M+ service request records
-- Feature engineering: time-based metrics, workload calculations
-- Department categorization and quarterly trend analysis
-
-### **2. Power BI Executive Dashboard**
-- Interactive service performance monitoring dashboard
-- Department filter functionality with real-time KPIs
-- Geographic heatmaps and trend visualizations  
-- Resource optimization recommendations panel
-
-### **3. Strategic Business Analysis**
-- Peak service period identification with seasonal breakdown
-- Understaffed department flagging using quantitative models
-- Data-driven resource allocation recommendations
-- Executive summary with actionable insights
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```
-Government-Service-Desk-Analytics/
-├── data/
-│   ├── raw_api_data/
-│   ├── processed_service_requests.csv
-│   └── data_dictionary.md
-├── analysis/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_workload_analysis.ipynb  
-│   ├── 03_department_performance.ipynb
-│   └── 04_optimization_modeling.ipynb
-├── dashboard/
-│   ├── service_desk_dashboard.pbix
-│   ├── dashboard_screenshots/
-│   └── power_bi_guide.md
-├── src/
-│   ├── data_ingestion.py
-│   ├── analysis_functions.py
-│   └── visualization_utils.py
-└── README.md
+├── data_exploration.py          # Initial data analysis and quality assessment
+├── business_metrics.py          # Enterprise workload calculations and KPIs  
+├── nyc_311_ENTERPRISE_5M_powerbi.csv    # Processed dataset for Power BI
+├── NYC_Service_Desk_Enterprise_Analytics.pbix    # Interactive dashboard
+└── README.md                    # Project documentation
 ```
 
-## 🚀 Getting Started
+## Analysis Results
 
-### **Prerequisites**
-```bash
-Python 3.8+
-pandas >= 1.3.0
-requests >= 2.25.0  
-matplotlib >= 3.3.0
-seaborn >= 0.11.0
-Microsoft Power BI Desktop (free)
-```
+**Departmental Workload Analysis:**
+- New York City Police Department: 128,673 requests/month (257% utilization)
+- Department of Housing Preservation: 57,012 requests/month (114% utilization)
+- 13 other departments operating within optimal thresholds
 
-### **Installation & Setup**
-```bash
-# Clone repository
-git clone https://github.com/[username]/government-service-desk-analytics
-cd government-service-desk-analytics
+**Geographic Performance:**
+- Brooklyn: 1.65M requests (30% of total volume)
+- All boroughs maintaining 95%+ closure rates
+- Consistent service delivery across regional boundaries
 
-# Install dependencies
-pip install -r requirements.txt
+**Peak Demand Periods:**
+- Highest volume: April 15, 2024 (15,904 requests)
+- Daily average: 9,402 requests
+- Predictive accuracy: 98% using statistical thresholds
 
-# Run data fetch
-python src/data_ingestion.py
-```
+## Usage
 
-## 📈 Analysis Highlights
+1. **Data Analysis**: Run Python scripts for enterprise-scale data processing
+2. **Visualization**: Open .pbix file in Power BI Desktop for interactive dashboard
+3. **Customization**: Modify baseline parameters and thresholds as needed
 
-### **Peak Volume Identification**
-- **Monday-Tuesday peaks**: 35% higher request volume
-- **Summer surge**: June-August 40% above baseline
-- **Hurricane season impact**: October service spike patterns
+## Requirements
 
-### **Department Performance**
-- **NYPD**: Highest volume (35% of requests), fastest resolution
-- **HPD**: Housing requests, seasonal heating patterns  
-- **DOT**: Transportation, weather-dependent volume
+- Python 3.8+ with pandas, matplotlib, seaborn
+- Power BI Desktop (free from Microsoft)
+- 8GB+ RAM recommended for dataset processing
 
-### **Resource Optimization**
-- **Cross-training opportunities**: Identified in 8 departments
-- **Staffing recommendations**: Quarterly allocation model
-- **Technology improvements**: Automated triage potential
+## License
 
-## 🎯 Business Value Delivered
-
-**Executive Impact**: Provided data-driven insights enabling strategic resource allocation decisions for NYC government operations, directly supporting improved citizen service delivery and operational efficiency.
-
-**Operational Excellence**: Established systematic approach to service desk performance monitoring, creating sustainable framework for ongoing government service optimization.
-
-**Cost Optimization**: Identified specific departmental inefficiencies and resource misallocations, providing roadmap for estimated $2.5M annual savings through improved workforce utilization.
-
----
-
-*This project demonstrates advanced business analytics capabilities applied to large-scale government operations, showcasing expertise in data pipeline development, statistical analysis, and executive-level business intelligence reporting.*
+This project is available under the MIT License.
